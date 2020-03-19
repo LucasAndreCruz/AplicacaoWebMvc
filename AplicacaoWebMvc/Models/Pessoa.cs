@@ -34,6 +34,7 @@ namespace AplicacaoWebMvc.Models
         public EstadoCivil EstadoCivil { get; set; }
 
         public Endereco Endereco { get; set; }
+        public Dependente Dependente { get; set; }
 
         public Fichario Fichario { get; set; }
         [Display(Name = "Fichário")]
@@ -45,7 +46,7 @@ namespace AplicacaoWebMvc.Models
 
         }
 
-        public Pessoa(int pessoaId, string nome, string email, DateTime dataDeNascimento, string cPF, EstadoCivil estadoCivil, Fichario fichario, int ficharioId)
+        public Pessoa(int pessoaId, string nome, string email, DateTime dataDeNascimento, string cPF, EstadoCivil estadoCivil, Endereco endereco, Dependente dependente, Fichario fichario, int ficharioId)
         {
             PessoaId = pessoaId;
             Nome = nome;
@@ -53,6 +54,8 @@ namespace AplicacaoWebMvc.Models
             DataDeNascimento = dataDeNascimento;
             CPF = cPF;
             EstadoCivil = estadoCivil;
+            Endereco = endereco;
+            Dependente = dependente;
             Fichario = fichario;
             FicharioId = ficharioId;
         }
