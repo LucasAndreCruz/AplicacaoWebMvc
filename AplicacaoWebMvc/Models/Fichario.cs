@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AplicacaoWebMvc.Models
 {
-    public  class Fichario
+    public  class Fichario 
     {
         public int FicharioId { get; set; }
 

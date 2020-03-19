@@ -18,6 +18,7 @@ namespace AplicacaoWebMvc.Services
 
         }
 
+        // Retornar todos os fichario
         public List<Fichario> FindAll()
         {
             return _context.Fichario.OrderBy(x => x.Nome).ToList();

@@ -49,6 +49,8 @@ namespace AplicacaoWebMvc
 
 
             services.AddScoped<ServicoPessoas>();
+            services.AddScoped<ServicoFichario>();
+
 
         }
 

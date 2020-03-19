@@ -3,14 +3,16 @@ using System;
 using AplicacaoWebMvc.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AplicacaoWebMvc.Migrations
 {
     [DbContext(typeof(AplicacaoWebMvcContext))]
-    partial class AplicacaoWebMvcContextModelSnapshot : ModelSnapshot
+    [Migration("20200319000636_ClasseEndereco")]
+    partial class ClasseEndereco
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

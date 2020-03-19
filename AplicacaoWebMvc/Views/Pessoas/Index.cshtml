@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<AplicacaoWebMvc.Models.Pessoa>
 @{
-    ViewData["Title"] = "Lista de Pessoas";
+    ViewData["Title"] = "Lista de Membros";
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -25,7 +25,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.EstadoCivil)
             </th>
-           
+            <th>
+                @Html.DisplayNameFor(model => model.FicharioId)
+            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -48,7 +51,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.EstadoCivil)
                 </td>
-                
+                <td>
+                    @Html.DisplayFor(modelItem => item.FicharioId)
+                </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.PessoaId" class="btn btn-warning">Editar</a>
                     <a asp-action="Details" asp-route-id="@item.PessoaId" class="btn btn-info">Detalhes</a>

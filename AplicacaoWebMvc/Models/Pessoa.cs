@@ -13,10 +13,11 @@ namespace AplicacaoWebMvc.Models
         public int PessoaId { get; set; }
 
         [Required(ErrorMessage = "{0} é obrigatório")]
-        [Display(Name = "Nome do dizimista")]
+        [Display(Name = "Nome")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "{0} é obrigatorio")]
+        [Display(Name = "E-mail")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
@@ -29,7 +30,10 @@ namespace AplicacaoWebMvc.Models
         [Required(ErrorMessage = "{0} é obrigatorio")]
         public string CPF { get; set; }
 
+        [Display(Name = "Estado Civil")]
         public EstadoCivil EstadoCivil { get; set; }
+
+        public Endereco Endereco { get; set; }
 
         public Fichario Fichario { get; set; }
         [Display(Name = "Fichário")]

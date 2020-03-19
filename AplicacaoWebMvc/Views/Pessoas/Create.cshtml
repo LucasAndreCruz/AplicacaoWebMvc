@@ -1,4 +1,4 @@
-﻿@model AplicacaoWebMvc.Models.Pessoa
+﻿@model AplicacaoWebMvc.Models.ViewModels.PessoaFormViewModel
 @{
     ViewData["Title"] = "Cadastrar nova pessoa";
 }
@@ -48,38 +48,40 @@
         <form asp-action="Create">
 
             <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
+                <label asp-for="Pessoa.Nome" class="control-label"></label>
+                <input asp-for="Pessoa.Nome" class="form-control" />
             </div>
 
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <label asp-for="Pessoa.Email" class="control-label"></label>
+                <input asp-for="Pessoa.Email" class="form-control" />
             </div>
 
             <div class="form-group">
-                <label asp-for="DataDeNascimento" class="control-label"></label>
-                <input asp-for="DataDeNascimento" class="form-control" />
+                <label asp-for="Pessoa.DataDeNascimento" class="control-label"></label>
+                <input asp-for="Pessoa.DataDeNascimento" class="form-control" />
             </div>
 
             <div class="form-group">
-                <label asp-for="CPF" class="control-label"></label>
-                <input asp-for="CPF" class="form-control" />
+                <label asp-for="Pessoa.CPF" class="control-label"></label>
+                <input asp-for="Pessoa.CPF" class="form-control" />
             </div>
 
             <div class="form-group">
-                <label asp-for="EstadoCivil" class="control-label"></label>
-                <select asp-for="EstadoCivil" class="form-control"></select>
+                <label asp-for="Pessoa.EstadoCivil" class="control-label"></label>
+                <select  asp-for="Pessoa.EstadoCivil" class="form-control" id="EstadoCivil">
+                    <option value="0"> Solteiro</option>
+                    <option value="1"> Casado</option>
+                    <option value="2"> Viuvo</option>
+                    <option value="3"> Divorciado</option>
+                </select>
             </div>
-
-
-            <!---
 
             <div class="form-group">
-                <label asp-for="Fichario" class="control-label"></label>
-                <input asp-for="Fichario" class="form-control" />
+                <label asp-for="Pessoa.FicharioId" class="control-label"></label>
+                <select asp-for="Pessoa.FicharioId" class="form-control" asp-items="@(new SelectList(Model.Ficharios, "FicharioId", "Nome"))"></select>
             </div>
-                 ---->
+     
             <div class="form-group">
                 <input type="submit" value="Adicionar" class="btn btn-success" />
                 <a class="btn btn-default" asp-action="Index">Voltar</a>

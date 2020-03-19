@@ -3,37 +3,21 @@ using System;
 using AplicacaoWebMvc.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AplicacaoWebMvc.Migrations
 {
     [DbContext(typeof(AplicacaoWebMvcContext))]
-    partial class AplicacaoWebMvcContextModelSnapshot : ModelSnapshot
+    [Migration("20200318200629_FicharioIdEstrageira")]
+    partial class FicharioIdEstrageira
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
-
-            modelBuilder.Entity("AplicacaoWebMvc.Models.Endereco", b =>
-                {
-                    b.Property<int>("EnderecoId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Bairro");
-
-                    b.Property<string>("Cep");
-
-                    b.Property<string>("Logradouro");
-
-                    b.Property<string>("Numero");
-
-                    b.HasKey("EnderecoId");
-
-                    b.ToTable("Endereco");
-                });
 
             modelBuilder.Entity("AplicacaoWebMvc.Models.Fichario", b =>
                 {
@@ -60,8 +44,6 @@ namespace AplicacaoWebMvc.Migrations
                     b.Property<string>("Email")
                         .IsRequired();
 
-                    b.Property<int?>("EnderecoId");
-
                     b.Property<int>("EstadoCivil");
 
                     b.Property<int>("FicharioId");
@@ -70,8 +52,6 @@ namespace AplicacaoWebMvc.Migrations
                         .IsRequired();
 
                     b.HasKey("PessoaId");
-
-                    b.HasIndex("EnderecoId");
 
                     b.HasIndex("FicharioId");
 
@@ -100,10 +80,6 @@ namespace AplicacaoWebMvc.Migrations
 
             modelBuilder.Entity("AplicacaoWebMvc.Models.Pessoa", b =>
                 {
-                    b.HasOne("AplicacaoWebMvc.Models.Endereco", "Endereco")
-                        .WithMany("listaDePessoa")
-                        .HasForeignKey("EnderecoId");
-
                     b.HasOne("AplicacaoWebMvc.Models.Fichario", "Fichario")
                         .WithMany("ListaDePessoa")
                         .HasForeignKey("FicharioId")
