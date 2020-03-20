@@ -6,12 +6,27 @@
 <h3>@ViewData["Title"]</h3>
 
 <hr />
-<!-- Botão para acionar modal -->
+    <div class="posicao-fixa">
 
-<button type="button" class="btn btn-light disabled" data-toggle="modal" data-target="#">
-    Verificar antes!
-</button>
+        
+        <button type="submit" value="Adicionar" class="btn btn-success ">
+            <span class="glyphicon glyphicon-plus"></span>
+            Adicionar
+        </button>
 
+        <a asp-action="Index" class="btn btn-warning ">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            Alterar
+        </a>
+
+        <!-- Botão para acionar modal -->
+        <button type="button" class="btn btn-danger disabled" data-toggle="modal" data-target="#">
+            Verificar antes!
+        </button>
+    </div>
+
+<br />
+<br />
 <!-- Modal -->
 <div class="modal fade" id="ModalConfirmacao" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -38,53 +53,199 @@
         </div>
     </div>
 </div>
-<br />
-<br />
+
 
 
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Create">
 
-            <div class="form-group">
-                <label asp-for="Pessoa.Nome" class="control-label"></label>
-                <input asp-for="Pessoa.Nome" class="form-control" />
+            <div class="panel panel-primary">
+                <div class="panel-heading">Informações Pessoais</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Nome" class="control-label"></label>
+                                <input asp-for="Pessoa.Nome" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.CPF" class="control-label"></label>
+                                <input asp-for="Pessoa.CPF" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.DataDeNascimento" class="control-label"></label>
+                                <input asp-for="Pessoa.DataDeNascimento" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Sexo" class="control-label"></label>
+                                <label asp-for="Pessoa.Sexo" class="radio-inline">
+                                    <input type="radio" name="Sexo" id="SexoFeminino" value="1" />
+                                    Feminino
+                                </label>
+                                <label asp-for="Pessoa.Sexo" class="radio-inline">
+                                    <input type="radio" name="Sexo" id="SexoMasculino" value="0" />
+                                    Masculino
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.EstadoCivil" class="control-label"></label>
+                                <select asp-for="Pessoa.EstadoCivil" class="form-control" id="EstadoCivil">
+                                    <option value="0"> Solteiro</option>
+                                    <option value="1"> Casado</option>
+                                    <option value="2"> Viuvo</option>
+                                    <option value="3"> Divorciado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Conjugue" class="control-label"></label>
+                                <input asp-for="Pessoa.Conjugue" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.CidadeDeNascimento" class="control-label"></label>
+                                <input asp-for="Pessoa.CidadeDeNascimento" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Nacionalidade" class="control-label"></label>
+                                <input asp-for="Pessoa.Nacionalidade" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.NomeDaMae" class="control-label"></label>
+                                <input asp-for="Pessoa.NomeDaMae" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.NomeDoPai" class="control-label"></label>
+                                <input asp-for="Pessoa.NomeDoPai" class="form-control" />
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <br />
+
+
+
+
+
+
+                </div>
             </div>
 
-            <div class="form-group">
-                <label asp-for="Pessoa.Email" class="control-label"></label>
-                <input asp-for="Pessoa.Email" class="form-control" />
-            </div>
 
-            <div class="form-group">
-                <label asp-for="Pessoa.DataDeNascimento" class="control-label"></label>
-                <input asp-for="Pessoa.DataDeNascimento" class="form-control" />
-            </div>
 
-            <div class="form-group">
-                <label asp-for="Pessoa.CPF" class="control-label"></label>
-                <input asp-for="Pessoa.CPF" class="form-control" />
-            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">Endereço e Contatos</div>
+                <div class="panel-body">
+                    <div class="row">
 
-            <div class="form-group">
-                <label asp-for="Pessoa.EstadoCivil" class="control-label"></label>
-                <select  asp-for="Pessoa.EstadoCivil" class="form-control" id="EstadoCivil">
-                    <option value="0"> Solteiro</option>
-                    <option value="1"> Casado</option>
-                    <option value="2"> Viuvo</option>
-                    <option value="3"> Divorciado</option>
-                </select>
-            </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Endereco.Logradouro" class="control-label"></label>
+                                <input asp-for="Pessoa.Endereco.Logradouro" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Endereco.Bairro" class="control-label"></label>
+                                <input asp-for="Pessoa.Endereco.Bairro" class="form-control" />
+                            </div>
+                        </div>
 
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Endereco.Complemento" class="control-label"></label>
+                                <input asp-for="Pessoa.Endereco.Complemento" class="form-control" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Endereco.Cep" class="control-label"></label>
+                                <input asp-for="Pessoa.Endereco.Cep" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Endereco.Cidade" class="control-label"></label>
+                                <input asp-for="Pessoa.Endereco.Cidade" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Contato.TelefoneFixo" class="control-label"></label>
+                                <input asp-for="Pessoa.Contato.TelefoneFixo" class="form-control" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Contato.TelefoneMovel" class="control-label"></label>
+                                <input asp-for="Pessoa.Contato.TelefoneMovel" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Contato.Email" class="control-label"></label>
+                                <input asp-for="Pessoa.Contato.Email" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.Contato.TelefoneFixo" class="control-label"></label>
+                                <input asp-for="Pessoa.Contato.TelefoneFixo" class="form-control" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
             <div class="form-group">
                 <label asp-for="Pessoa.FicharioId" class="control-label"></label>
                 <select asp-for="Pessoa.FicharioId" class="form-control" asp-items="@(new SelectList(Model.Ficharios, "FicharioId", "Nome"))"></select>
-            </div>
-     
-            <div class="form-group">
-                <input type="submit" value="Adicionar" class="btn btn-success" />
-                <a class="btn btn-default" asp-action="Index">Voltar</a>
             </div>
         </form>
     </div>

@@ -3,14 +3,16 @@ using System;
 using AplicacaoWebMvc.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AplicacaoWebMvc.Migrations
 {
     [DbContext(typeof(AplicacaoWebMvcContext))]
-    partial class AplicacaoWebMvcContextModelSnapshot : ModelSnapshot
+    [Migration("20200319010611_CriandoNovasClasses")]
+    partial class CriandoNovasClasses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
