@@ -6,23 +6,27 @@
 <h3>@ViewData["Title"]</h3>
 
 <hr />
+
     <div class="posicao-fixa">
-
         
-        <button type="submit" value="Adicionar" class="btn btn-success ">
-            <span class="glyphicon glyphicon-plus"></span>
-            Adicionar
-        </button>
+        <div class="form-group">
+            <button type="submit" value="Create" class="btn btn-success ">
+                <span class="glyphicon glyphicon-plus"></span>
+                Adicionar
+            </button>
 
-        <a asp-action="Index" class="btn btn-warning ">
-            <span class="glyphicon glyphicon-list-alt"></span>
-            Alterar
-        </a>
+            <a asp-action="Index" class="btn btn-warning ">
+                <span class="glyphicon glyphicon-list-alt"></span>
+                Alterar
+            </a>
 
-        <!-- Botão para acionar modal -->
-        <button type="button" class="btn btn-danger disabled" data-toggle="modal" data-target="#">
-            Verificar antes!
-        </button>
+            <!-- Botão para acionar modal -->
+            <button type="button" class="btn btn-danger disabled" data-toggle="modal" data-target="#">
+                Verificar antes!
+            </button>
+
+        </div>
+ 
     </div>
 
 <br />
@@ -64,6 +68,28 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Informações Pessoais</div>
                 <div class="panel-body">
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Pessoa.FicharioId" class="control-label"></label>
+                                <select asp-for="Pessoa.FicharioId" class="form-control" asp-items="@(new SelectList(Model.Ficharios, "FicharioId", "Nome"))"></select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+
+                        </div>
+
+                    </div>
+
+                    <br />
+
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -243,10 +269,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Pessoa.FicharioId" class="control-label"></label>
-                <select asp-for="Pessoa.FicharioId" class="form-control" asp-items="@(new SelectList(Model.Ficharios, "FicharioId", "Nome"))"></select>
-            </div>
+            
         </form>
     </div>
 </div>
